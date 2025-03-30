@@ -1,0 +1,37 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  border-style: solid;
+padding: 20px;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 20px;
+  width: 450px;
+  height: 70px;
+}
+
+.keyboard {
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+
+}
+
+.button {
+  border-style: solid;
+  background-color: rgb(36, 166, 226);
+  border-radius: 200px;
+  font-size: 30px;
+  padding: 5px;
+}
