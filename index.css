@@ -24,6 +24,8 @@ body {
   margin-bottom: 20px;
   width: 450px;
   height: 70px;
+  font-size: 30px;
+  overflow: auto;
 }
 
 .keyboard {
@@ -37,15 +39,15 @@ body {
   padding: 10px;
 }
 
-.button {
+.buttons {
   border-style: solid;
   background-color: rgb(36, 166, 226);
   border-radius: 60px;
   font-size: 50px;
-  flex: 0 1 22%;
+  flex: 0 1 20%;
   aspect-ratio: 1;
 }
 
-.button:hover {
+.buttons:hover {
   background-color: rgb(31, 141, 192);
 }
