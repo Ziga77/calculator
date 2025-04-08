@@ -2,7 +2,7 @@ console.log('hello')
 
 const display = document.querySelector('.display');
 const buttons = document.querySelectorAll('.nums');
-const clear = document.querySelector('.clear');
+const clearBtn = document.querySelector('.clear');
 const operators = document.querySelectorAll('.operators');
 const equals = document.querySelector('.equal');
 
@@ -17,11 +17,20 @@ let result = null;
 function getNum() {
   buttons.forEach(button => {
     button.addEventListener('click',() => {
+      if (result !== null) {
+        display.textContent = '';
+        num1 = '';
+        num2 = '';
+        operator = '';
+        result = null;
+      }
+
       display.textContent += button.textContent;
-      if (num1 === '') {
-        num1 += display.textContent;
+
+      if (operator === '') {
+        num1 += button.textContent;
       } else {
-        num2 += display.textContent;
+        num2 += button.textContent;
       }
     });
   });
@@ -32,6 +41,12 @@ getNum();
 function getOperator() {
   operators.forEach(op => {
     op.addEventListener('click', () => {
+      if (result !== null) {
+        num1 = result;
+        num2 = '';
+        result = null;
+      }
+
       operator = op.textContent;
       display.textContent = '';
     });
@@ -85,13 +100,14 @@ function showResult() {
 
 showResult();
 
-function clearDisplay() {
-  clear.addEventListener('click', () => {
+function clear() {
+  clearBtn.addEventListener('click', () => {
     display.textContent = '';
     num1 = '';
     num2 = '';
     operator = '';
+    result = null;
   });
 }
 
-clearDisplay();
+clear();
